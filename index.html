@@ -1,1 +1,415 @@
-hola
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Empleabilidad 🚀</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            overflow: hidden;
+        }
+
+        .presentation-container {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .slide {
+            display: none;
+            text-align: center;
+            max-width: 900px;
+            padding: 40px;
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .slide h1 {
+            font-size: 3.5em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .slide h2 {
+            font-size: 2.5em;
+            margin-bottom: 25px;
+            color: #FFD700;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .slide h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #87CEEB;
+        }
+
+        .slide p {
+            font-size: 1.4em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.15);
+            padding: 25px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: scale(1.05);
+        }
+
+        .stat-number {
+            font-size: 3em;
+            font-weight: bold;
+            color: #FFD700;
+            display: block;
+        }
+
+        .emoji {
+            font-size: 2em;
+            margin: 0 10px;
+        }
+
+        .challenge-list {
+            text-align: left;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .challenge-item {
+            background: rgba(255,255,255,0.1);
+            margin: 15px 0;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #FFD700;
+            font-size: 1.2em;
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-btn {
+            padding: 12px 25px;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            border-radius: 25px;
+            color: white;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        .slide-counter {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: rgba(0,0,0,0.3);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 1.1em;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #FFD700 0%, #FFA500 100%);
+            color: #333;
+            padding: 5px 15px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .impact-visual {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+        }
+
+        .impact-item {
+            text-align: center;
+            max-width: 150px;
+        }
+
+        .impact-icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <div class="slide-counter">
+            <span id="currentSlide">1</span> / <span id="totalSlides">7</span>
+        </div>
+
+        <!-- Slide 1: Presentación -->
+        <div class="slide active">
+            <h2 style="color: #FFD700;">¡Hola! Soy Victoria Charra 👋</h2>
+            <div style="background: rgba(255,255,255,0.15); padding: 30px; border-radius: 20px; margin: 30px 0;">
+                <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                    <div class="emoji" style="font-size: 3em;">👩🏻‍💼</div>
+                </div>
+                <p style="font-size: 1.4em; line-height: 1.6;">
+                    <span class="highlight">16 años conectando talento con oportunidades</span> en el mundo tech 💻
+                </p>
+                <p style="font-size: 1.2em; margin: 20px 0;">
+                    Fundadora de <strong>Talent Wind</strong> | Comunidad <strong>*Reclutando Latinoamérica*</strong>
+                </p>
+                <div style="background: rgba(255,255,255,0.2); padding: 20px; border-radius: 15px; margin-top: 20px; display: flex; flex-direction: column; align-items: center;">
+                    <div style="background: white; padding: 15px; border-radius: 8px; margin-bottom: 10px;">
+                        <img src="https://chuzina.github.io/images/linkedin.png" alt="QR Code Victoria Charra" style="width: 120px; height: 120px; display: block;" />
+                    </div>
+                    <p style="color: #FFD700; font-size: 1em; font-weight: bold;">¡Conéctate conmigo! 📱</p>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 0.9em;">Escanea para más info</p>
+                </div>
+            </div>
+            <p style="font-size: 1.3em;">
+                Hoy vamos a hablar de algo que me apasiona: <span class="highlight">SU futuro laboral</span> 🚀
+            </p>
+        </div>
+
+        <!-- Slide 2: Título Track -->
+        <div class="slide">
+            <h1>🚀 TRACK EMPLEABILIDAD</h1>
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; margin: 20px 0;">
+                <p style="font-size: 1.4em; color: #FFD700; font-weight: bold;">
+                    HACKATHON ACINDAR 2025
+                </p>
+            </div>
+            <p style="font-size: 1.8em; margin-top: 40px;">
+                <span class="highlight">Tu futuro laboral empieza HOY</span>
+            </p>
+            <div class="emoji pulse" style="font-size: 4em;">💼✨</div>
+            <p style="font-size: 1.3em; margin-top: 30px;">
+                ¿Listos para hackear el mundo del trabajo? 🔥
+            </p>
+        </div>
+
+        <!-- Slide 3: ¿Qué es empleabilidad? -->
+        <div class="slide">
+            <h2>¿Qué es la empleabilidad? 🤔</h2>
+            <div style="background: rgba(255,255,255,0.15); padding: 30px; border-radius: 20px; margin: 30px 0;">
+                <p style="font-size: 1.6em;">
+                    No es solo <span class="highlight">conseguir trabajo</span>
+                </p>
+                <div class="emoji">⬇️</div>
+                <p style="font-size: 1.8em; font-weight: bold;">
+                    Es tener el <span class="highlight">PODER DE ELEGIR</span> cómo querés desarrollarte 💪
+                </p>
+            </div>
+            <p style="font-size: 1.3em;">
+                Habilidades + Herramientas + Oportunidades = <span class="emoji">🔓</span> Libertad
+            </p>
+        </div>
+
+        <!-- Slide 4: La realidad que no podemos ignorar -->
+        <div class="slide">
+            <h2>La realidad que NO podemos ignorar 📊</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">15%</span>
+                    <p>de jóvenes desempleados 😰</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">6/10</span>
+                    <p>trabajan informal 📉</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">15%</span>
+                    <p>son NiNis (ni estudian ni trabajan) 😔</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">29%</span>
+                    <p>no termina la secundaria 🎓</p>
+                </div>
+            </div>
+            <p style="font-size: 1.4em; margin-top: 20px;">
+                <span class="highlight">Estos números tienen nombres y sueños</span> 💭
+            </p>
+        </div>
+
+        <!-- Slide 5: El impacto real -->
+        <div class="slide">
+            <h2>¿Cómo nos afecta esto? 💔</h2>
+            <div class="impact-visual">
+                <div class="impact-item">
+                    <div class="impact-icon">😞</div>
+                    <p>Frustración</p>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-icon">😰</div>
+                    <p>Ansiedad</p>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-icon">🚫</div>
+                    <p>Sin autonomía</p>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-icon">📉</div>
+                    <p>Comunidades estancadas</p>
+                </div>
+            </div>
+            <div class="emoji" style="font-size: 3em; margin-top: 20px;">PERO ESPERA... 🤔</div>
+            <p style="font-size: 1.8em; margin-top: 30px;">
+                <span class="highlight">Cuando accedemos a oportunidades reales, TODO cambia</span> ⚡
+            </p>
+        </div>
+
+        <!-- Slide 6: Nuestra misión -->
+        <div class="slide">
+            <h2>🎯 NUESTRA MISIÓN</h2>
+            <div style="background: rgba(255,255,255,0.15); padding: 30px; border-radius: 20px; margin: 30px 0;">
+                <h3>Queremos que piensen soluciones CONCRETAS para:</h3>
+                <div style="text-align: left; margin-top: 30px;">
+                    <p><span class="emoji">🌉</span> Conectar educación con trabajo</p>
+                    <p><span class="emoji">🔗</span> Vincular jóvenes con el mundo laboral</p>
+                    <p><span class="emoji">🛠️</span> Crear herramientas accesibles para empleos de calidad</p>
+                </div>
+            </div>
+            <p style="font-size: 1.4em;">
+                Desde lo que SÍ tienen: <span class="highlight">creatividad, iniciativa, comunidad</span> 🔥
+            </p>
+        </div>
+
+        <!-- Slide 7: Challenges para hackear -->
+        <div class="slide">
+            <h2>🔥 CHALLENGES para HACKEAR</h2>
+            <div class="challenge-list">
+                <div class="challenge-item">
+                    💡 ¿Cómo ayudar a alguien a descubrir su pasión y talento?
+                </div>
+                <div class="challenge-item">
+                    📝 ¿Cómo hacer que un CV no sea una barrera?
+                </div>
+                <div class="challenge-item">
+                    🤝 ¿Cómo conectar jóvenes con empresas locales?
+                </div>
+                <div class="challenge-item">
+                    📱 ¿Herramientas digitales que funcionen sin internet 24/7?
+                </div>
+                <div class="challenge-item">
+                    🔄 ¿Cómo romper el círculo "sin experiencia no te contratan"?
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Call to action -->
+        <div class="slide">
+            <h1 style="font-size: 3em;">¿Por qué elegir este track? 🚀</h1>
+            <div style="background: linear-gradient(45deg, #FFD700, #FFA500); color: #333; padding: 40px; border-radius: 25px; margin: 40px 0;">
+                <p style="font-size: 2em; font-weight: bold;">
+                    Porque la empleabilidad es una LLAVE 🗝️
+                </p>
+                <p style="font-size: 1.6em; margin-top: 20px;">
+                    Y ustedes pueden abrir puertas que hoy están cerradas
+                </p>
+            </div>
+            <p style="font-size: 1.8em;">
+                No se trata solo de <span class="highlight">buscar trabajo</span>
+            </p>
+            <p style="font-size: 2.2em; margin-top: 20px;">
+                Se trata de <span class="pulse highlight">CREAR OPORTUNIDADES</span> 💪✨
+            </p>
+            <div class="emoji" style="font-size: 4em; margin-top: 30px;">🔥🚀💼</div>
+        </div>
+
+        <div class="navigation">
+            <button class="nav-btn" onclick="previousSlide()">⬅️ Anterior</button>
+            <button class="nav-btn" onclick="nextSlide()">Siguiente ➡️</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        document.getElementById('totalSlides').textContent = totalSlides;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+            document.getElementById('currentSlide').textContent = index + 1;
+        }
+
+        function nextSlide() {
+            currentSlideIndex = (currentSlideIndex + 1) % totalSlides;
+            showSlide(currentSlideIndex);
+        }
+
+        function previousSlide() {
+            currentSlideIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlideIndex);
+        }
+
+        // Navegación con teclado
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowRight' || event.key === ' ') {
+                nextSlide();
+            } else if (event.key === 'ArrowLeft') {
+                previousSlide();
+            }
+        });
+
+        // Auto-avance opcional (descomenta para activar)
+        // setInterval(nextSlide, 60000); // Cambia cada 60 segundos
+    </script>
+</body>
+</html>
